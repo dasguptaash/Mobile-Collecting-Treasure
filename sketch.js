@@ -68,18 +68,19 @@ function draw() {
   
     
 
-    if (cashG.isTouching(boy) || diamondsG.isTouching(boy) ||
-    jwelleryG.isTouching(boy)) {
-      cash.destroy[1];
+    if (cashG.isTouching(boy) )
+     {
+      cashG[0].destroy();
       treasureCollection = treasureCollection + 50;
-      
-      diamonds.destroy[1];
+    }else if(diamondsG.isTouching(boy) ){
+      diamondsG[0].destroy();
       treasureCollection  = treasureCollection + 500;
+    } else if (jwelleryG.isTouching(boy)) {
    
-      jwellery.destroy[1];
+      jwelleryG[0].destroy();
       treasureCollection  = treasureCollection + 100;
  
-      
+    }
     
    if(swordGroup.isTouching(boy)){
      swordGroup.destroyEach();
@@ -106,7 +107,7 @@ function draw() {
        gameOverSound.play();
         
       }
-   }
+   
    
     
   
